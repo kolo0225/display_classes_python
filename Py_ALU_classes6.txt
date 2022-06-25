@@ -1,0 +1,87 @@
+# Py_ALU_classes6.txt
+# exec(open('Py_ALU_classes6.txt').read())
+
+# Purpose:
+#	to practice creating classes in python
+#	there should be many version of this file from 0 to high 
+#	witn increasing complexity and demonstration of increasing understanding on 
+#	the concept of classes and python 
+#
+# ====================================================================================
+
+class ALU:
+	def __init__(self,x,y,z):
+		
+		self.x_value      = x 
+		self.y_value      = y 
+		self.z_value      = z
+
+		# we can define those variables here __init__()
+		# or inside their fns
+		self.res_add    = 0
+		self.res_sub    = 0
+		self.res_mul    = 0
+		self.res_div    = 0
+
+	# first fns after __init__(self):
+	def add_print(self):
+
+		#self.res_add    = 0 
+		self.res_add = self.x_value + self.y_value
+		print('add_print self.x_value + self.y_value: \n', 
+		self.res_add)
+
+	def sub_print(self):
+
+		#self.res_sub    = 0 
+		self.res_sub = self.x_value - self.y_value
+		print('sub_print self.x_value - self.y_value: \n', 
+		self.res_sub)
+
+	def mul_print(self):
+
+		#self.res_mul    = 0 
+		self.res_mul = self.x_value * self.y_value
+		print('mul_print self.x_value * self.y_value: \n', 
+		self.res_mul)
+	
+	def div_print(self):
+		
+		#self.res_div    = 0 
+		self.res_div = self.x_value / self.y_value
+		print('div_print self.x_value / self.y_value: \n', 
+		self.res_div)
+
+	# second fns after __init__(self):
+	def input_from_first_add(self):
+		self.res_add2 = self.res_add + self.z_value 
+		print('input_from_first_add(self): \n', 
+		self.res_add2)
+
+	def input_from_first_sub(self):
+		self.res_sub2 = self.res_sub - self.z_value 
+		print('input_from_first_sub(self): \n', 
+		self.res_sub2)
+	
+	def input_from_first_mul(self):
+		self.res_mul1 = self.res_mul * self.z_value 
+		print('input_from_first_mul(self): \n', 
+		self.res_mul1)
+
+	def input_from_first_div(self):
+		self.res_div2 = self.res_div / self.z_value 
+		print('input_from_first_add(self): \n', 
+		self.res_div2)
+
+op = ALU(3,2,1)
+
+op.add_print() 
+op.sub_print() 
+op.mul_print() 
+op.div_print() 
+
+op.input_from_first_add()
+op.input_from_first_sub()
+op.input_from_first_mul()
+op.input_from_first_div()
+

@@ -1,0 +1,35 @@
+# Py_ALU_classes3.txt
+# exec(open('Py_ALU_classes3.txt').read())
+
+# Purpose:
+#	to practice creating classes in python
+#	there should be many version of this file from 0 to high 
+#	witn increasing complexity and demonstration of increasing understanding on 
+#	the concept of classes and python 
+#
+# ====================================================================================
+
+class ALU:
+	def __init__(self,x,y ):
+		
+		self.x_value      = x 
+		self.y_value      = y 
+
+	def add_print(self):
+		print('add_print self.x_value + self.y_value: \n', 
+		self.x_value + self.y_value)
+	def sub_print(self):
+		print('sub_print self.x_value - self.y_value: \n', 
+		self.x_value - self.y_value)
+	def mul_print(self):
+		print('mul_print self.x_value * self.y_value: \n', 
+		self.x_value * self.y_value)
+	def div_print(self):
+		print('div_print self.x_value / self.y_value: \n', 
+		self.x_value / self.y_value)
+op = ALU(3,2)
+
+op.add_print() 
+op.sub_print() 
+op.mul_print() 
+op.div_print() 

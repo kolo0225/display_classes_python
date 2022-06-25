@@ -1,0 +1,25 @@
+# Py_ALU_classes1.txt
+# exec(open('Py_ALU_classes1.txt').read())
+
+# Purpose:
+#	to practice creating classes in python
+#	there should be many version of this file from 0 to high 
+#	witn increasing complexity and demonstration of increasing understanding on 
+#	the concept of classes and python 
+#
+# ====================================================================================
+
+class ALU:
+	def __init__(self, add, sub, mul, div):
+		
+		self.addition       = add
+		self.subtraction    = sub
+		self.multiplication = mul
+		self.division       = div 
+
+op = ALU(3+2, 3-2, 3*2, 3/2)
+
+print('op.addition: ', op.addition)
+print('op.subtraction: ', op.subtraction)
+print('op.multiplication: ', op.multiplication)
+print('op.division: ', op.division)

@@ -1,0 +1,85 @@
+# Py_ALU_classes5.txt
+# exec(open('Py_ALU_classes5.txt').read())
+
+# Purpose:
+#	to practice creating classes in python
+#	there should be many version of this file from 0 to high 
+#	witn increasing complexity and demonstration of increasing understanding on 
+#	the concept of classes and python 
+#
+# ====================================================================================
+
+class ALU:
+	def __init__(self,x,y,z):
+		
+		self.x_value      = x 
+		self.y_value      = y 
+		self.z_value      = z 
+
+	# first fns after __init__(self):
+	def add_print(self):
+		res = self.x_value + self.y_value
+		print('add_print self.x_value + self.y_value: \n', 
+		res)
+		return res
+	def sub_print(self):
+		res = self.x_value - self.y_value
+		print('sub_print self.x_value - self.y_value: \n', 
+		res)
+		return res
+	def mul_print(self):
+		res = self.x_value * self.y_value
+		print('mul_print self.x_value * self.y_value: \n', 
+		res)
+		return res
+	def div_print(self):
+		res = self.x_value / self.y_value
+		print('div_print self.x_value / self.y_value: \n', 
+		res)
+		return res
+
+	# second fns after __init__(self):
+	def input_from_first_add(self,fn1):
+		res = fn1 + self.z_value 
+		print('input_from_first_add(fn1, z): \n', 
+		res)
+		return res
+
+	def input_from_first_sub(self,fn2):
+		res = fn2 - self.z_value 
+		print('input_from_first_add(fn2, z): \n', 
+		res)
+		return res
+	def input_from_first_mul(self,fn3):
+		res = fn3 * self.z_value 
+		print('input_from_first_add(fn3, z): \n', 
+		res)
+		return res
+	def input_from_first_div(self,fn4):
+		res = fn4 / self.z_value 
+		print('input_from_first_add(fn4, z): \n', 
+		res)
+		return res
+
+op = ALU(3,2,1)
+
+#op.add_print() 
+#op.sub_print() 
+#op.mul_print() 
+#op.div_print() 
+
+fn1 = op.add_print()
+fn2 = op.sub_print()
+fn3 = op.mul_print()
+fn4 = op.div_print()
+
+print ('fn1: \n', fn1)
+print ('fn2: \n', fn2)
+print ('fn3: \n', fn3)
+print ('fn4: \n', fn4)
+
+op.input_from_first_add( fn1)
+op.input_from_first_sub( fn2)
+op.input_from_first_mul( fn3)
+op.input_from_first_div( fn4)
+

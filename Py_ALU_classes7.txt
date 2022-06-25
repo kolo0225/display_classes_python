@@ -1,0 +1,74 @@
+# Py_ALU_classes7.txt 
+# exec(open('Py_ALU_classes7.txt').read())
+
+# Purpose:
+#	to practice creating classes in python
+#	there should be many version of this file from 0 to high 
+#	witn increasing complexity and demonstration of increasing understanding on 
+#	the concept of classes and python 
+#
+# ====================================================================================
+
+class ALU:
+	def __init__(self, x, file_in, reset, y):
+		
+		self.x_value      = x 
+		self.file_in      = file_in
+		self.res_accum    = 0
+		self.reset        = reset 
+		self.y_value      = y
+
+	def reset_file_in (self):
+		with open (self.file_in,'w') as w:
+			w.write(self.reset)
+			print('self.reset in reset_file_in(): ', self.reset)
+
+	def read_text (self):
+		with open (self.file_in,'r') as r:
+			res = r.read()
+			print('res in read_text(): ', res)
+		return res              # return is needed will be used in line 35
+
+	def add_print_accum(self ):
+
+		self.res_accum = self.read_text()
+		self.res_accum = int(self.res_accum)
+
+		self.res_accum +=  self.x_value 
+
+		print("add_print_accum {first} += {second}".format(
+		first =  self.res_accum, second = self.x_value ))
+
+		#return self.res_accum   # return is NOT needed NOT SURE WHY
+
+	def write_text (self):
+		self.res_accum = str(self.res_accum)
+		with open (self.file_in,'w') as w:
+			w.write(self.res_accum)
+			print('self.res_accum in write_text(): ', self.res_accum)
+			
+		self.res_accum = int(self.res_accum)
+
+	def add_print_2num(self ):
+
+		res_2num_y     = self.x_value + self.y_value
+		res_2num_accum = self.res_accum + self.y_value
+
+		print("add_print_2num {first} = {second} + {third}".format(
+		first =  res_2num_y, second = self.x_value, third =self.y_value))
+
+		print("add_print_2num {first} = {second} + {third}".format(
+		first =  res_2num_accum, second = self.res_accum, third =self.y_value))
+	
+op = ALU(x=2, file_in ='accum.txt', reset ='0', y =11)
+
+#op.reset_file_in()     # when resets it goes back to the value the reset is set to
+
+op.read_text ()        # reads data from 'accum.txt'
+
+op.add_print_accum()   # returns results + x
+op.write_text ()       # writes result + x
+
+op.add_print_2num()    # return x+y
+		       # returns results + y 
+
