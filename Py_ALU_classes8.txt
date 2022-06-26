@@ -1,0 +1,43 @@
+# Py_ALU_classes8.txt 
+# exec(open('Py_ALU_classes8.txt').read())
+
+# Purpose:
+#	to practice creating classes in python
+#	there should be many version of this file from 0 to high 
+#	witn increasing complexity and demonstration of increasing understanding on 
+#	the concept of classes and python 
+#
+# ====================================================================================
+
+class ALU:
+	def __init__(self, x, y,z, multiplier, res_sum):
+		
+		self.x_value      = x 
+		self.y_value      = y
+		self.z_value      = z
+		self.multiplier   = multiplier
+		self.res_sum      = res_sum 
+
+
+	def add_operation (self):
+		self.res_sum = self.x_value + self.y_value
+		
+	# using the @classmethod we can use the var directly 
+	# no need for 'self.'
+	@classmethod
+	def extra_operations (cls, x, y, z, multiplier, res_sum):
+
+		return cls(x,(x + z)* multiplier,z,multiplier,res_sum = x + (x + z)* multiplier)
+
+
+	def print_res (self):
+		
+		print("add_print_2num {first} = {second} + {third}".format(
+		first =  self.res_sum, second = self.x_value, third =self.y_value))
+	
+op1 = ALU(x=2, y=4, z=5, multiplier =1, res_sum =0)
+op1.add_operation()     # instance method, uses self
+op1.print_res()         
+
+op2 =ALU.extra_operations (2,4,9,1,0)    # class method, uses var directly, return cls(vars) 
+op2.print_res()         
